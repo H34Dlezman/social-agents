@@ -1,0 +1,39 @@
+<form id="exploreForm" method="post" enctype="multipart/form-data" action="/api/ai">
+    <label for="name">Unternehmensname</label>
+    <div class="formField">
+        <input type="text" id="name" name="name" />
+    </div>
+
+    <label for="description">Aufgaben-/Produktbereich</label>
+    <div class="formField">
+        <input type="text" id="description" name="description" />
+    </div>
+
+    <label for="context">Kontext. Motto, Team-, Geist-Beschreibung</label>
+    <div class="formField">
+        <input type="text" id="context" name="context" />
+    </div class="formField">
+
+    <label for="jsonURL">Instagram JSON URL</label>
+    <div class="formField">
+        <input type="url" id="jsonURL" name="jsonURL" />
+    </div class="formField">
+
+    <div class="formField">
+        <input type="submit" value="Aktuelle Posts Holen" />
+    </div>
+</form>
+
+<div id="loader" class="center"></div>
+
+
+<script>
+    document.querySelector("#exploreForm").onsubmit = () => {
+        document.querySelector("#loader").style.display = "block"
+    }
+
+    if (location.search != "") {
+        let params = new URLSearchParams(location.search)
+        params.get("alert")&&alert(params.get("alert"))
+    }
+</script>

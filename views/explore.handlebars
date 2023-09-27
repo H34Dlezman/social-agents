@@ -1,0 +1,39 @@
+<form id="exploreForm" method="post" enctype="multipart/form-data" action="/api/explore">
+    <label for="word">Erkundungs-Wort</label>
+    <div class="formField">
+        <input type="text" id="word" name="word" />
+    </div>
+
+    <label for="user">Instagram Nutzername</label>
+    <div class="formField">
+        <input type="text" id="user" name="user" />
+    </div>
+
+    <label for="pass">Instagram Passwort</label>
+    <div class="formField">
+        <input type="password" id="pass" name="pass" />
+    </div class="formField">
+
+    <label for="limit">Maximale Anzahl an Posts (0 für so viele wie möglich)</label>
+    <div class="formField">
+        <input type="number" id="limit" name="limit" placeholder="5" />
+    </div>
+
+    <div class="formField">
+        <input type="submit" value="Aktuelle Posts Holen" />
+    </div>
+</form>
+
+<div id="loader" class="center"></div>
+
+
+<script>
+    document.querySelector("#exploreForm").onsubmit = () => {
+        document.querySelector("#loader").style.display = "block"
+    }
+
+    if (location.search != "") {
+        let params = new URLSearchParams(location.search)
+        params.get("alert")&&alert(params.get("alert"))
+    }
+</script>

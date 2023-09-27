@@ -1,0 +1,21 @@
+<div>
+    <h2>AI Content</h2>
+    <p>{{aiResponse}}</p>
+</div>
+<div>
+    <h2>Posts für {{keyword}}</h2>
+    <ul>
+        {{#each instagramPosts}}
+        <li>
+            <a href="{{postURL}}" target="_blank">{{postURL}}</a>
+            <ul>
+            {{#each postComments}}
+            <li>
+                <p>{{this}}</p>
+            </li>
+            {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+</div>
